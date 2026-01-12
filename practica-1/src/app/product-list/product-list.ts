@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../interfaces/i-product';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
 export class ProductList {
+  showImage = true;
+  imageAlgo() {
+    this.showImage = !this.showImage;
+  }
   title = 'Mi lista de productos';
   headers = { image: 'Imagen', desc: 'Producto', price: 'Precio', avail: 'Disponible' };
   products: IProduct[] =[

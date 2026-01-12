@@ -11,4 +11,5 @@ export class UserProfile {
   profilemage = 'avatar.png';
   //Ej 2
   isPremium = true;
+
 }
