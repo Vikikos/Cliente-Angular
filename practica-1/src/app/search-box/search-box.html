@@ -1,0 +1,16 @@
+<form action="">
+    <label for="search">Buscar: </label>
+    <input type="text" name="search" id="search" [(ngModel)]="searchText">
+</form>
+<div>Buscando: {{searchText}}</div>
+
+<h2>Ejercicio 10</h2>
+<form action="">
+    <label for="name">Nombre: </label>
+    <input type="text" name="name" id="name" [(ngModel)]="user.name"><br>
+
+    <label for="email">Email: </label>
+    <input type="text" name="email" id="email" [(ngModel)]="user.email"><br>
+</form>
+<div>Nombre: {{user.name}}</div>
+<div>Email: {{user.email}}</div>

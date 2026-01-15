@@ -2,6 +2,27 @@
     <div style="background-color: blue; color: white; padding: 0.75rem">
         My product's list
     </div>
+    <div class="card-block">
+        <form class="form">
+            <div class="form-group row">
+            <label class="col-form-label col-sm-2 text-sm-right"
+            for="filterDesc">Filtro:</label>
+            <div class="col-sm-5">
+                <input
+                type="text"
+                [(ngModel)]="filterSearch"
+                class="form-control"
+                name="filterDesc"
+                id="filterDesc"
+                placeholder="Filter..."
+                />
+            </div>
+            <label class="col-form-label col-sm-5"> 
+                Filtrando por: {{ filterSearch}}
+            </label>
+            </div>
+        </form>
+    </div>
     <div style="padding: 1rem">
         <div>
             <button 
@@ -22,7 +43,6 @@
                     </thead>
                     <tbody>
                         @for(product of products; track product.id){
-                            <img [src]="product.imageUrl" alt=""/>
                             <tr>
                                 <td>@if (showImage) { <img [src]="product.imageUrl" alt=""/>}</td>
                                 <td>{{ product.desc }}</td>

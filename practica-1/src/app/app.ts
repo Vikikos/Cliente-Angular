@@ -3,10 +3,12 @@ import { ProductList } from './product-list/product-list';
 import { UserProfile } from "./user-profile/user-profile";
 import { TextStyle } from "./text-style/text-style";
 import { StatusRow } from "./status-row/status-row";
+import { ButtonHover } from "./button-hover/button-hover";
+import { SearchBox } from "./search-box/search-box";
 
 @Component({
   selector: 'app-root',
-  imports: [ProductList,UserProfile,TextStyle,StatusRow],
+  imports: [ProductList,UserProfile,TextStyle,StatusRow,ButtonHover,SearchBox],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

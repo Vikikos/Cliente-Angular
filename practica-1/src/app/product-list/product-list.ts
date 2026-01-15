@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../interfaces/i-product';
 import { NgClass } from '@angular/common';
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-product-list',
-  imports: [NgClass],
+  imports: [NgClass,FormsModule],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
 export class ProductList {
+  filterSearch: string = '';
   showImage = true;
   imageAlgo() {
     this.showImage = !this.showImage;
@@ -21,7 +23,7 @@ export class ProductList {
       desc: 'SSD hard drive',
       avail: new Date('2016-10-03'),
       price: 75,
-      imageUrl: '/ssd.jpg',
+      imageUrl: '/avatar.png',
       rating: 5,
     },
     {
@@ -29,7 +31,7 @@ export class ProductList {
       desc: 'LGA1151 Motherboard',
       avail: new Date('2016-09-15'),
       price: 96.95,
-      imageUrl: '/motherboard.jpg',
+      imageUrl: '/avatar.png',
       rating: 4,
     },
   ];
