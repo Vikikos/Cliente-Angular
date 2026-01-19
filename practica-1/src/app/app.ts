@@ -5,10 +5,15 @@ import { TextStyle } from "./text-style/text-style";
 import { StatusRow } from "./status-row/status-row";
 import { ButtonHover } from "./button-hover/button-hover";
 import { SearchBox } from "./search-box/search-box";
+import { PriceView } from './price-view/price-view';
+import { EventList } from './event-list/event-list';
+import { LifecycleTest } from './lifecycle-test/lifecycle-test';
 
 @Component({
   selector: 'app-root',
-  imports: [ProductList,UserProfile,TextStyle,StatusRow,ButtonHover,SearchBox],
+  imports: [ProductList,UserProfile,TextStyle,
+    StatusRow,ButtonHover,SearchBox,PriceView,
+    EventList,LifecycleTest],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

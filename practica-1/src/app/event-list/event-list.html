@@ -1,0 +1,25 @@
+<div>
+    <h3>Eventos - Sin filtrar</h3>
+    @for (event of eventos; track event.title) {
+        <div>
+            <div>{{ event.title }}</div>
+            <div>{{ event.description }}</div>
+        </div>
+    }
+</div>
+
+<h3>Ejercicio 15</h3>
+
+<form action="">
+    <label for="search">Buscar por Titulo: </label>
+    <input type="text" name="search" id="search" [(ngModel)]="searchText">
+</form>
+<div>
+    <h3>Eventos - filtrados por {{searchText}}</h3>
+    @for (event of eventos | titleFilter: searchText; track event.title) {
+        <div>
+            <div>{{ event.title }}</div>
+            <div>{{ event.description }}</div>
+        </div>
+    }
+</div>
