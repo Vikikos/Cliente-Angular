@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IEvents } from '../interfaces/i-events';
+import { Component } from '@angular/core';//por defecto
+
+import { IEvents } from '../interfaces/i-events';//la interfaz
+
 
 @Component({
   selector: 'app-events-show',
@@ -8,17 +10,18 @@ import { IEvents } from '../interfaces/i-events';
   styleUrl: './events-show.css',
 })
 export class EventsShow {
+  search = '';
   events: IEvents[] = [
     {
-      title: 'Evento 1',
+      title: 'evento discoteca',
       image: 'imagen',
       date: '2025/12/20',
       description: 'texto kdhvkjdfvbh',
       price: 20
     },
     {
-      title: 'Evento 2',
-      image: 'imagen2',
+      title: 'Evento boda',
+      image: 'imagen 2',
       date: '2025/12/22',
       description: 'texto kdhfbd,nfj,bnfjkjdfvbh',
       price: 10
