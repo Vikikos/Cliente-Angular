@@ -67,10 +67,27 @@ export class EventsShow {
   };
 
   addEvent() {
-
+    this.events.push(this.newEvent);
+    // this.newEvent = {
+    //   title: '',
+    //   description: '',
+    //   image: '',
+    //   price: 0,
+    //   date: ''
+    // };
   }
 
-  changeImage(fileImage : string) {
-    this.newEvent.image = fileImage;
+  // changeImage(fileImage : any) {
+  //   console.log(fileImage.value)
+  //   this.newEvent.image = fileImage.value;
+  // }
+
+  changeImage(fileInput: HTMLInputElement) {
+    if (!fileInput.files || fileInput.files.length === 0) { return; }
+    const reader: FileReader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+    reader.addEventListener('loadend', e => {
+      this.newEvent.image = reader.result as string;
+    });
   }
 }
