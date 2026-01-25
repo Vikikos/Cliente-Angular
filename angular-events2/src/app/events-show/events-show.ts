@@ -68,13 +68,13 @@ export class EventsShow {
 
   addEvent() {
     this.events.push(this.newEvent);
-    // this.newEvent = {
-    //   title: '',
-    //   description: '',
-    //   image: '',
-    //   price: 0,
-    //   date: ''
-    // };
+    this.newEvent = {
+      title: '',
+      description: '',
+      image: '',
+      price: 0,
+      date: ''
+    };
   }
 
   // changeImage(fileImage : any) {
