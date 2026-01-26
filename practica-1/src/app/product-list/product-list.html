@@ -44,7 +44,8 @@
                     </thead>
                     <tbody>
                         @for (product of products; track product.id) {
-                           <tr product-item></tr>
+                            <!--[product]="product" [showImage]="showImage" permite mandar los datos al hijo componente-->
+                           <tr product-item [product]="product" [showImage]="showImage"></tr>
                         }
                     </tbody>
                 </table>

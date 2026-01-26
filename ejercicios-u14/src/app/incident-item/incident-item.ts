@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: '[incident-item]',
@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './incident-item.css',
 })
 export class IncidentItem {
-    incident = {
-      'type': 'Error',
-      'desc': 'No se puede acceder',
-      'state': 'Pendiente'
-    }
+    @Input() incident!: any;
 }

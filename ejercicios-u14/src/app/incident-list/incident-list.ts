@@ -12,12 +12,22 @@ export class IncidentList {
     {
       'type': 'Error',
       'desc': 'No se puede acceder',
-      'state': 'Pendiente'
+      'state': 'Solucionada'
     },
     {
       'type': 'Error',
       'desc': 'No se puede acceder',
       'state': 'Pendiente'
+    },
+    {
+      'type': 'Aviso',
+      'desc': 'Nuevo inicio de sesion',
+      'state': 'Pendiente'
+    },
+    {
+      'type': 'Error',
+      'desc': 'No se puede acceder',
+      'state': 'Vista'
     },
   ]
 }

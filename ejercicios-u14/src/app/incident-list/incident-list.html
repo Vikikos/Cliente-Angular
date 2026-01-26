@@ -6,7 +6,7 @@
     </thead>
     <tbody>
         @for (incident of incidents; track $index) {
-            <tr incident-item></tr>
+            <tr incident-item [incident]="incident"></tr>
         }
     </tbody>
 </table>
