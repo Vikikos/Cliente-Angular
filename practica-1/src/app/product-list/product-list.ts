@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { IProduct } from '../interfaces/i-product';
 import { NgClass } from '@angular/common';
 import { FormsModule } from "@angular/forms";
+import { ProductItem } from '../product-item/product-item';
+
+
 
 @Component({
   selector: 'app-product-list',
-  imports: [NgClass,FormsModule],
+  imports: [NgClass,FormsModule,ProductItem],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })

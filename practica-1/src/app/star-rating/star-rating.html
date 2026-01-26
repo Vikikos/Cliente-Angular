@@ -1,0 +1,5 @@
+<div class="star-container">
+    @for (star of [1, 2, 3, 4, 5]; track $index) {
+        <i [ngClass]="{ 'bi-star-fill': star <= rating, 'bi-star': star > rating }"></i>
+    }
+</div>
