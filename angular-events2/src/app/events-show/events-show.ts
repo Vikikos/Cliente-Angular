@@ -17,21 +17,21 @@ export class EventsShow {
   events: IEvents[] = [
     {
       title: 'evento discoteca',
-      image: '/discoteca.avif',
+      image: 'discoteca.avif',
       date: '2025/12/20',
       description: 'texto kdhvkjdfvbh',
       price: 20
     },
     {
       title: 'Evento boda',
-      image: '/boda.jpg',
+      image: 'boda.jpg',
       date: '2025/12/22',
       description: 'texto kdhfbd,nfj,bnfjkjdfvbh',
       price: 10
     },
     {
       title: 'Evento Festival',
-      image: '/boda.jpg',
+      image: 'boda.jpg',
       date: '2025/12/02',
       description: 'texto kdhfbd,nfj,bnfjkjdfvbh',
       price: 25
