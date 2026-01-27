@@ -7,7 +7,7 @@
     </thead>
     <tbody>
         @for (incident of incidents; track $index) {
-            <tr incident-item [incident]="incident" (estadoCambiado)="actualizarEstado($event)"></tr>
+            <tr incident-item [incident]="incident" (estadoCambiado)="actualizarEstado($index,$event)"></tr>
         }
     </tbody>
 </table>

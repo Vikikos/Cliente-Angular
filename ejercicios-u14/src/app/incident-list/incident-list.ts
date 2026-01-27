@@ -30,7 +30,8 @@ export class IncidentList {
         'state': 'Vista'
         },
     ]
-    actualizarEstado(index: any, state: string) {
+    actualizarEstado(index: any, state : string){
+        console.log('si');
         this.incidents[index].state = state;
     }
 }

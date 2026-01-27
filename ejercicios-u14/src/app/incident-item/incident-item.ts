@@ -1,10 +1,9 @@
 import { Component, Input, Output } from '@angular/core';
-import { IncidentState } from '../incident-state/incident-state';
-import { EventEmitter } from 'stream';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: '[incident-item]',
-  imports: [IncidentState],
+  imports: [],
   templateUrl: './incident-item.html',
   styleUrl: './incident-item.css',
 })
@@ -12,9 +11,9 @@ export class IncidentItem {
     @Input() incident!: any;
     auxEstado!: string;
 
-    @Output() estadoCambiado = new EventEmitter<String>();
+    @Output() estadoCambiado = new EventEmitter<string>();
     cambiarEstado(){
-        this.auxEstado!: String = "resuelta";
+        this.auxEstado = "resuelta";
         this.estadoCambiado.emit(this.auxEstado);
     }
 }
