@@ -3,10 +3,11 @@
         <th scope="col">Tipo</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Estado</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         @for (incident of incidents; track $index) {
-            <tr incident-item [incident]="incident"></tr>
+            <tr incident-item [incident]="incident" (estadoCambiado)="actualizarEstado($event)"></tr>
         }
     </tbody>
 </table>

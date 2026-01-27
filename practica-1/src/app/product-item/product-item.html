@@ -1,4 +1,4 @@
-<tr>
+
     <td>
     @if (showImage) {
         <img [src]="product.imageUrl" alt="" [title]="product.desc | uppercase" />
@@ -7,5 +7,7 @@
     <td>{{ product.desc }}</td>
     <td>{{ product.price | currency: 'EUR' : 'symbol' }}</td>
     <td>{{ product.avail | date: 'dd/MM/y' }}</td>
-    <td><star-rating></star-rating></td>
-</tr>
+    <td>
+        <star-rating [rating]="product.rating"
+        (ratingChanged)="changeRating($event)"></star-rating>
+    </td>

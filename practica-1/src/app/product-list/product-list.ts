@@ -26,7 +26,7 @@ export class ProductList {
       desc: 'SSD hard drive',
       avail: new Date('2016-10-03'),
       price: 75,
-      imageUrl: '/avatar.png',
+      imageUrl: 'ssd.jpeg',
       rating: 5,
     },
     {
@@ -34,8 +34,8 @@ export class ProductList {
       desc: 'LGA1151 Motherboard',
       avail: new Date('2016-09-15'),
       price: 96.95,
-      imageUrl: '/avatar.png',
-      rating: 4,
+      imageUrl: 'placa.jpg',
+      rating: 1,
     },
   ];
 }

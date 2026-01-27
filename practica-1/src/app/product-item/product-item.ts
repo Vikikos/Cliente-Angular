@@ -15,4 +15,7 @@ export class ProductItem {
     //recibimos los datos
     @Input() product!: IProduct;
     @Input() showImage!: boolean;
+    changeRating(rating: number) {
+        this.product.rating = rating;
+    }
 }
