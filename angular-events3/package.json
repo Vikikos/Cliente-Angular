@@ -1,5 +1,5 @@
 {
-  "name": "angular-events3",
+  "name": "angular-events2",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-events3": "node dist/angular-events3/server/server.mjs"
+    "serve:ssr:angular-events2": "node dist/angular-events2/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
