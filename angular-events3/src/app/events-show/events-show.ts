@@ -6,40 +6,30 @@ import { FormsModule } from '@angular/forms';
 import { EventFilterPipe } from "../pipes/event-filter-pipe";
 import { EventoItem } from "../evento-item/evento-item";
 import { EventoAdd } from "../evento-add/evento-add";
-
+import { EventoServiceService } from "../services/evento-service.service";
 
 
 @Component({
   selector: 'app-events-show',
-  imports: [CommonModule, FormsModule, EventFilterPipe, EventoItem, EventoAdd],
+  imports: [CommonModule, 
+    FormsModule, 
+    EventFilterPipe, 
+    EventoItem, 
+    EventoAdd
+  ],
   templateUrl: './events-show.html',
   styleUrl: './events-show.css',
 })
 export class EventsShow {
   search = '';
-  events: IEvents[] = [
-    {
-      title: 'evento discoteca',
-      image: 'discoteca.avif',
-      date: '2025/12/20',
-      description: 'texto kdhvkjdfvbh',
-      price: 20
-    },
-    {
-      title: 'Evento boda',
-      image: 'boda.jpg',
-      date: '2025/12/22',
-      description: 'texto kdhfbd,nfj,bnfjkjdfvbh',
-      price: 10
-    },
-    {
-      title: 'Evento Festival',
-      image: 'festival.jpg',
-      date: '2025/12/02',
-      description: 'texto 3',
-      price: 25
-    }
-  ]
+  //inicializamos el array vacio
+  events: IEvents[] = [];
+  //indicamos el tipo de parametro como EventoServiceService y angular pasa automaticvo el objeto del servicio al llamar al constructor
+  constructor(private eventService: EventoServiceService) {}
+  ngOnInit() {
+    //llamamos al metodo del servicio que decuelve los eventos
+    this.events = this.eventService.getEventos();
+  }
 
   orderDate() {
     this.search='';
