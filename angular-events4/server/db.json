@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "evento discoteca",
+      "image": "discoteca.avif",
+      "date": "2025/12/20",
+      "description": "Una noche inolvidable con los mejores DJs locales, iluminación neón de última generación y una atmósfera vibrante para bailar hasta el amanecer.",
+      "price": 20
+    },
+    {
+      "id": 2,
+      "title": "Evento boda",
+      "image": "boda.jpg",
+      "date": "2025/12/22",
+      "description": "Una celebración elegante y romántica diseñada para compartir momentos especiales, con un banquete exclusivo y música en vivo en un entorno de ensueño.",
+      "price": 10
+    },
+    {
+      "id": 3,
+      "title": "Evento Festival",
+      "image": "festival.jpg",
+      "date": "2025/12/02",
+      "description": "Un despliegue de cultura y sonido al aire libre que reúne a múltiples artistas, zonas gastronómicas y actividades interactivas para toda la familia.",
+      "price": 25
+    }
+  ]
+}
