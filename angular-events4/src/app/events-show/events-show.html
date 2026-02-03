@@ -13,14 +13,15 @@
 </nav>
 <evento-add (eventAdded)="addEvent($event)"></evento-add>
 <div class="row">
-    @if (events.length <= 0) {
-        <h3>No hay eventos disponibles</h3>
-    }
-    @else {
+    @if (eventos$ | async; as events) {
         @for (event of events | eventFilter : search; track event.title) {
             <div class="col-6 mt-4"> <!-- Repetir esto por cada evento -->
                 <evento-item [event]="event" class="card" (deletEvent)="deletEventArray(event)"></evento-item>
             </div>
         }
+        
+    }
+    @else {
+        <h3>No hay eventos disponibles</h3>
     }
 </div>

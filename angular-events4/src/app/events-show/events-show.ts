@@ -7,6 +7,7 @@ import { EventFilterPipe } from "../pipes/event-filter-pipe";
 import { EventoItem } from "../evento-item/evento-item";
 import { EventoAdd } from "../evento-add/evento-add";
 import { EventoServiceService } from "../services/evento-service.service";
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -23,39 +24,52 @@ import { EventoServiceService } from "../services/evento-service.service";
 export class EventsShow {
   search = '';
   //inicializamos el array vacio
-  events: IEvents[] = [];
+  eventos$: Observable<IEvents[]>;
   //indicamos el tipo de parametro como EventoServiceService y angular pasa automaticvo el objeto del servicio al llamar al constructor
-  constructor(private eventService: EventoServiceService) {}
+  constructor(private eventService: EventoServiceService) {
+    this.eventos$ = this.eventService.getEvents();
+  }
   ngOnInit() {
     //llamamos al metodo del servicio que decuelve los eventos
-    this.events = this.eventService.getEventos();
+    //this.events = this.eventService.getEvents();
   }
 
   orderDate() {
     this.search='';
-
-    this.events = this.events.sort(function (a,b) {
+    /*
+    this.eventos$ = this.eventos$.sort(function (a,b) {
       if(a.date > b.date) return 1;
       else if(a.date < b.date) return -1;
       else return 0;
     });
+    */
   }
 
   orderPrice(){
     this.search='';
 
-    this.events = this.events.sort(function (a,b) {
+    /*
+    this.eventos$ = this.eventos$.sort(function (a,b) {
       if(a.price > b.price) return 1;
       else if(a.price < b.price) return -1;
       else return 0;
     });
+    */
   }
 
-  deletEventArray(eve: IEvents) {
+  deletEventArray(even: IEvents) {
     //this.events.splice(this.events.indexOf(eve), 1);
-    this.events = this.events.filter((e) => e.title != eve.title);
+    //this.eventos$ = this.eventos$.filter((e) => e.title != eve.title);
   }
   addEvent(newEvent : IEvents) {
-    this.events = [...this.events,newEvent];
+    this.eventService
+    .addEvent(newEvent)
+    .subscribe();
+
+    //actualizamos el observable de eventos
+    this.eventos$ = this.eventService.getEvents();
+    //otra manera  probar
+    //.suscribe(() => this.eventos$ = [...this.eventos$,newEvent])
   }
+    
 }

@@ -20,6 +20,7 @@ export class EventoAdd {
   @Output() eventAdded = new EventEmitter<IEvents>;
 
     addEvent() {
+      
       this.eventAdded.emit(this.newEvent);
       //this.events.push(this.newEvent);
       this.newEvent = {
@@ -30,11 +31,6 @@ export class EventoAdd {
         date: ''
       };
     }
-  
-    // changeImage(fileImage : any) {
-    //   console.log(fileImage.value)
-    //   this.newEvent.image = fileImage.value;
-    // }
   
     changeImage(fileInput: HTMLInputElement) {
       if (!fileInput.files || fileInput.files.length === 0) { return; }

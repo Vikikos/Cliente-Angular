@@ -1,34 +1,49 @@
 import { Injectable } from '@angular/core';
 import { IEvents } from '../interfaces/i-events';//la interfaz
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { catchError, Observable, retry, throwError } from "rxjs";
 
 @Injectable({
   providedIn: 'root',
 })
 export class EventoServiceService {
-  getEventos() : IEvents[] {
-    //devolvemos el array de los eventos
-    return [
-      {
-        title: 'evento discoteca',
-        image: 'discoteca.avif',
-        date: '2025/12/20',
-        description: 'texto kdhvkjdfvbh',
-        price: 20
-      },
-      {
-        title: 'Evento boda',
-        image: 'boda.jpg',
-        date: '2025/12/22',
-        description: 'texto kdhfbd,nfj,bnfjkjdfvbh',
-        price: 10
-      },
-      {
-        title: 'Evento Festival',
-        image: 'festival.jpg',
-        date: '2025/12/02',
-        description: 'texto 3',
-        price: 25
-      }
-    ]
+  private eventsEndpoint = 'http://localhost:3000/events';
+
+  constructor(private http: HttpClient) {}
+
+  getEvents() : Observable<IEvents[]> {
+    //rapida
+    //return this.http.get<IEvents[]>(this.eventsEndpoint);
+
+    //manera correcta
+    return this.http
+    .get<IEvents[]>(this.eventsEndpoint)
+    .pipe(
+      catchError((res: HttpErrorResponse) => 
+        throwError(
+          () => new Error('Error en Obtener Eventos'),
+        ),
+      ),
+    );
+  }
+
+  addEvent(evento: IEvents): Observable<IEvents> {
+    return this.http
+    .post<IEvents>(this.eventsEndpoint, evento)
+    .pipe(
+      catchError((res: HttpErrorResponse) =>
+        throwError(()=> new Error('Error al crear el evento'))
+      )
+    );
+  }
+
+  deleteEvento(id: string):Observable<any> {
+    return this.http
+    .delete<IEvents>(`${this.eventsEndpoint}/${id}`)
+    .pipe(
+      catchError((res: HttpErrorResponse) => 
+        throwError(()=> new Error('Error al eliminar el vento'))
+      )
+    );
   }
 }

@@ -14,6 +14,6 @@ export class EventoItem {
 
   @Output() deletEvent = new EventEmitter<void>();
   deleteEvento() {
-      this.deletEvent.emit();
+    this.deletEvent.emit();
   }
 }

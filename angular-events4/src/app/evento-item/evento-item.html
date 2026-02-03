@@ -1,4 +1,9 @@
-<img src="{{ event.image }}" alt="imagen evento" class="card-img-top">
+@if (event.image == '') {
+    <img src="event-default.png" alt="imagen evento" class="card-img-top">
+}@else{
+    <img src="{{ event.image }}" alt="imagen evento" class="card-img-top">
+}
+
 <div class="card-body">
     <h4 class="card-title">{{ event.title | titlecase }}</h4>
     <p class="card-text" [innerText]="event.description"></p>
