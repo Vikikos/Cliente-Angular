@@ -60,7 +60,14 @@ export class EventsShow {
   deletEventArray(even: IEvents) {
     //this.events.splice(this.events.indexOf(eve), 1);
     //this.eventos$ = this.eventos$.filter((e) => e.title != eve.title);
+    this.eventService
+    .deleteEvento(even.id!)
+    .subscribe();
+
+    //actualizamos el observable de eventos
+    this.eventos$ = this.eventService.getEvents();
   }
+  /*
   addEvent(newEvent : IEvents) {
     this.eventService
     .addEvent(newEvent)
@@ -71,5 +78,5 @@ export class EventsShow {
     //otra manera  probar
     //.suscribe(() => this.eventos$ = [...this.eventos$,newEvent])
   }
-    
+    */
 }

@@ -11,7 +11,7 @@
         <input class="form-control mr-sm-2" type="text" [(ngModel)]="search" name="search"placeholder="Search" aria-label="Search">
     </form>
 </nav>
-<evento-add (eventAdded)="addEvent($event)"></evento-add>
+
 <div class="row">
     @if (eventos$ | async; as events) {
         @for (event of events | eventFilter : search; track event.title) {

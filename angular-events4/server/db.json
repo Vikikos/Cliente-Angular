@@ -23,6 +23,14 @@
       "date": "2025/12/02",
       "description": "Un despliegue de cultura y sonido al aire libre que reúne a múltiples artistas, zonas gastronómicas y actividades interactivas para toda la familia.",
       "price": 25
+    },
+    {
+      "id": "c9b5",
+      "title": "nuevo evento 4",
+      "description": "dfgfv",
+      "image": "",
+      "price": 4,
+      "date": "2026-02-06"
     }
   ]
 }

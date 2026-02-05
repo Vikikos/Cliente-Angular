@@ -3,12 +3,12 @@ import { IProduct } from '../interfaces/i-product';
 import { NgClass } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { ProductItem } from '../product-item/product-item';
-
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-product-list',
-  imports: [NgClass,FormsModule,ProductItem],
+  imports: [NgClass,FormsModule,ProductItem,RouterOutlet],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })

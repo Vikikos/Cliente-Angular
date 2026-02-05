@@ -8,12 +8,13 @@ import { SearchBox } from "./search-box/search-box";
 import { PriceView } from './price-view/price-view';
 import { EventList } from './event-list/event-list';
 import { LifecycleTest } from './lifecycle-test/lifecycle-test';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [ProductList,UserProfile,TextStyle,
     StatusRow,ButtonHover,SearchBox,PriceView,
-    EventList,LifecycleTest],
+    EventList,LifecycleTest, RouterOutlet ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

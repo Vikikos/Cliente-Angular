@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IEvents } from '../interfaces/i-events';//la interfaz
 import { FormsModule } from '@angular/forms';
+import { EventoServiceService } from "../services/evento-service.service";
 
 @Component({
   selector: 'evento-add',
@@ -17,12 +18,16 @@ export class EventoAdd {
       price: 0,
       date: ''
     };
-  @Output() eventAdded = new EventEmitter<IEvents>;
+  //@Output() eventAdded = new EventEmitter<IEvents>;
 
+    //indicamos el tipo de parametro como EventoServiceService y angular pasa automaticvo el objeto del servicio al llamar al constructor
+    constructor(private eventService: EventoServiceService) {}
     addEvent() {
-      
-      this.eventAdded.emit(this.newEvent);
-      //this.events.push(this.newEvent);
+      this.eventService
+      .addEvent(this.newEvent)
+      .subscribe();
+
+      //this.eventAdded.emit(this.newEvent);
       this.newEvent = {
         title: '',
         description: '',
@@ -30,6 +35,7 @@ export class EventoAdd {
         price: 0,
         date: ''
       };
+      
     }
   
     changeImage(fileInput: HTMLInputElement) {
